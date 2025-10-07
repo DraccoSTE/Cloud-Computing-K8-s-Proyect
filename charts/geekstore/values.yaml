@@ -1,0 +1,63 @@
+namespaceOverride: ""
+
+images:
+  backend: "mvp/backend:0.1.0"
+  frontend: "mvp/frontend:0.1.0"
+  neo4j: "neo4j:5.25.1-community"
+  envoy: "envoyproxy/envoy:v1.31.0"
+
+backend:
+  replicas: 1
+  servicePort: 5666
+  resources:
+    requests:
+      cpu: "100m"
+      memory: "128Mi"
+    limits:
+      cpu: "500m"
+      memory: "512Mi"
+  env:
+    NEO4J_URI: "neo4j://neo4j:7687"
+  hpa:
+    enabled: true
+    minReplicas: 1
+    maxReplicas: 5
+    targetCPUUtilizationPercentage: 60
+
+frontend:
+  replicas: 1
+  servicePort: 80
+  resources:
+    requests:
+      cpu: "50m"
+      memory: "64Mi"
+    limits:
+      cpu: "500m"
+      memory: "256Mi"
+  hpa:
+    enabled: true
+    minReplicas: 1
+    maxReplicas: 5
+    targetCPUUtilizationPercentage: 60
+
+neo4j:
+  boltPort: 7687
+  httpPort: 7474
+  storage: 1Gi
+  resources:
+    requests:
+      cpu: "100m"
+      memory: "512Mi"
+    limits:
+      cpu: "1"
+      memory: "1Gi"
+
+envoy:
+  servicePort: 8080
+  resources:
+    requests:
+      cpu: "50m"
+      memory: "64Mi"
+    limits:
+      cpu: "500m"
+      memory: "256Mi"

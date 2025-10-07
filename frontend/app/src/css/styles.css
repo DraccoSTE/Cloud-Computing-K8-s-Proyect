@@ -1,0 +1,408 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.how-it-works {
+  flex: 1;
+  color: black;
+}
+.whats-inside {
+  flex: 1;
+  color: black;
+}
+.category {
+  display: inline-block;
+  margin: 10px;
+}
+.category a {
+  text-decoration: none;
+}
+.label {
+  display: block;
+  text-align: center;
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.buy-button:hover {
+  background-color: #e0e0e0;
+}
+html, body {
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  background-image: url('../images/fondo.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Main App Layout */
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #333;
+  padding: 1rem;
+  text-align: center;
+}
+
+.navbar ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #4CAF50;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 2rem;
+  background: url('https://i.imgur.com/YeaQR2A.jpeg') no-repeat center center/cover;
+  height: 100vh;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.cta-button {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 1.0rem 1.5rem;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #45a049;
+}
+
+/* What's Inside Section */
+.whats-inside {
+  text-align: center;
+  padding: 3rem 2rem;
+  background-color: #fff;
+}
+
+.whats-inside h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.items {
+  display: flex;
+  justify-content: space-around;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.item {
+  text-align: center;
+  max-width: 250px;
+}
+
+.item img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.item h3 {
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+}
+
+/* How It Works Section */
+.how-it-works {
+  background-color: #f5f5f5;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.how-it-works h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.steps {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.step {
+  text-align: center;
+  max-width: 250px;
+}
+
+.step h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Categories Section */
+.categories-section {
+  padding: 2rem;
+  background-image: url('../images/fondo.png');
+}
+
+.categories {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.category {
+  background-color: #222;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.category img {
+  width: 100%;
+  height: 100%;
+  max-height: 250px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.label {
+  background-color: #6c8af2;
+  color: #fff;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+/* Subscription Section */
+.subscription-section {
+  padding: 10px;
+  background-image: url('../images/fondo.png');
+  height: 100vh;
+}
+
+.subscription-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 1400px;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.subscription-images {
+  flex: 1;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-right: 2rem;
+}
+
+.subscription-images img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.subscription-content {
+  flex: 2;
+  max-width: 800px;
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.subscription-content h1 {
+  font-size: 2rem;
+  color: #333;
+}
+
+.subscription-content h2 {
+  margin-top: 1.5rem;
+  font-size: 1.5rem;
+  color: #444;
+}
+
+.subscription-content p {
+  margin: 1rem 0;
+  color: #555;
+  line-height: 1.6;
+}
+
+.subscription-content ul {
+  padding-left: 1.5rem;
+  color: #555;
+}
+
+.subscription-content ul li {
+  margin-bottom: 0.5rem;
+}
+
+.subscription-buttons {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.subscription-buttons button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #f8c946;
+  color: black;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.subscription-buttons button:hover {
+  background-color: #e0b440;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  padding: 1rem 0;
+  text-align: center;
+  margin-top: auto;
+}
+
+footer nav a {
+  color: white;
+  margin: 0 0.5rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer nav a:hover {
+  color: #4CAF50;
+}
+
+.about-us-section {
+  display: flex;
+  align-items: flex-start;
+  padding: 40px;
+  background-size: cover;
+  background-position: center;
+}
+
+.about-content {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 5px;
+  width: 60%;
+}
+
+.about-content h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+.about-content {
+  flex: 1;
+  color: black;
+}
+.about-content h2 {
+  font-size: 22px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.about-content p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.about-image {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.about-image img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+ul {
+  text-align: left;
+}
+
+.navbar {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10px 20px;
+}
+
+.navbar ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.bubble {
+  background-color: rgba(255, 255, 255, 0.2); /* White with 20% opacity */
+  border-radius: 15px;
+  padding: 20px;
+  margin: 20px 0;
+  backdrop-filter: blur(10px); /* Frosted glass effect */
+}
+
+.h11 {
+  font-size: 3rem;
+  color: white;
+  -webkit-text-stroke: 2px black; /* Black border effect */
+  text-shadow: 0.1px 0.1px 0px black, -0.1px -0.1px 0px black, 
+               0.1px -0.1px 0px black, -0.1px 0.1px 0px black; /* Optional shadow for better effect */
+}

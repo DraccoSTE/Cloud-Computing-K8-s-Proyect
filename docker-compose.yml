@@ -1,0 +1,41 @@
+services:
+  neo4j:
+    image: neo4j:5.25.1-community
+    ports:
+      - 7888:7474
+      - 7999:7687
+    restart: unless-stopped
+    environment:
+      - NEO4J_AUTH=neo4j/password
+    volumes:
+      - ./db/data:/data
+      - ./db/conf:/conf
+      - ./db/logs:/logs
+      - ./db/plugins:/plugins
+
+  python:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    working_dir: /usr/src/mvp/backend
+    volumes:
+      - ./backend:/usr/src/mvp/backend
+    restart: unless-stopped
+    depends_on:
+      - neo4j
+
+  node:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - '3000:3000'
+    working_dir: /usr/src/mvp/frontend/app
+    volumes:
+      - ./frontend:/usr/src/mvp/frontend
+    stdin_open: true
+    tty: true
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    depends_on:
+      - python

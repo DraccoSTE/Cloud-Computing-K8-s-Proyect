@@ -1,0 +1,51 @@
+.about-container {
+  height: 100vh;
+  background-image: url('./images/fondo.png'); /* Updated to your local background image */
+  background-size: cover;
+  background-position: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  justify-content: space-between; /* Distribute space between text box and logo */
+  padding: 0 10%; /* Keep horizontal padding */
+}
+
+.text-box {
+  max-width: 50%;
+  background-color: white; /* White bubble background */
+  border-radius: 20px; /* Rounded corners for the bubble */
+  padding: 15px; /* Reduced padding inside the bubble */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Optional shadow for depth */
+  margin-top: 20px; /* Space from the bottom of the container */
+  margin-bottom: 20px; /* Space from the bottom of the container */
+  text-align: justify; /* Justify the text */
+}
+
+.text-box h1 {
+  font-size: 36px; /* Smaller heading size */
+  margin-bottom: 10px; /* Reduced bottom margin */
+  color: black; /* Black text */
+}
+
+.text-box p {
+  font-size: 18px; /* Smaller paragraph text size */
+  line-height: 1.5;
+  color: black; /* Black text */
+}
+
+.logo-box {
+  display: flex;
+  align-items: flex-start; /* Align the logo to the top of the box */
+  justify-content: center; /* Center the logo inside the logo box */
+  margin-top: 200px; /* Move the logo 100px up */
+}
+
+.about-logo {
+  max-width: 300px;
+  height: auto;
+}

@@ -1,0 +1,6 @@
+apiVersion: v2
+name: geekstore
+description: Adaptación del MVP (React + Flask + Neo4j) a Kubernetes con Envoy como gateway
+type: application
+version: 0.1.0
+appVersion: "0.1.0"

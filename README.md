@@ -215,6 +215,6 @@ helm uninstall geekstore -n geek
 minikube delete
 ```
 ## 11) Arquitectura
-![Arquitectura del Proyecto](./arqui_cloud)
+![Arquitectura del Proyecto](./arqui_cloud.jpg)
 
 ---

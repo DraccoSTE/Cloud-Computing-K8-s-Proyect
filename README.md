@@ -29,7 +29,6 @@ minikube version
 ## 2) Arrancar el clúster y métricas
 
 ```powershell
-minikube delete --all --purge
 minikube start --driver=docker --cpus=4 --memory=8192
 
 # Habilitar métricas (para HPA)
@@ -46,14 +45,14 @@ kubectl top nodes    # si aún no está disponible, espera 1–2 min
 ### Opción A — Build local y cargar al clúster
 ```powershell
 # Backend (Flask + Gunicorn)
-cd mvp\backend
-docker build -t mvp/backend:0.1.1 -f Dockerfile.k8s .
-minikube image load mvp/backend:0.1.1
+cd backend
+docker build -t backend:0.1.1 -f Dockerfile.k8s .
+minikube image load backend:0.1.1
 
 # Frontend (React + Nginx)
 cd ..\frontend
-docker build -t mvp/frontend:0.1.3 -f Dockerfile.k8s .
-minikube image load mvp/frontend:0.1.3
+docker build -t frontend:0.1.3 -f Dockerfile.k8s .
+minikube image load frontend:0.1.3
 ```
 
 ### Opción B — Build directo en el daemon de Minikube
@@ -61,10 +60,10 @@ minikube image load mvp/frontend:0.1.3
 & minikube -p minikube docker-env --shell powershell | Invoke-Expression
 
 cd mvp\backend
-docker build -t mvp/backend:0.1.1 -f Dockerfile.k8s .
+docker build -t backend:0.1.1 -f Dockerfile.k8s .
 
 cd ..\frontend
-docker build -t mvp/frontend:0.1.3 -f Dockerfile.k8s .
+docker build -t frontend:0.1.3 -f Dockerfile.k8s .
 ```
 
 ---
@@ -75,8 +74,8 @@ Desde la **raíz del repo** (donde está `charts\geekstore`):
 
 ```powershell
 helm upgrade --install geekstore charts/geekstore -n geek --create-namespace `
-  --set images.backend=mvp/backend:0.1.1 `
-  --set images.frontend=mvp/frontend:0.1.3
+  --set images.backend=backend:0.1.1 `
+  --set images.frontend=frontend:0.1.3
 kubectl get pods -n geek -w
 ```
 
